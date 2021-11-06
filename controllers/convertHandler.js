@@ -9,7 +9,7 @@
   const nonLetters = /[^a-zA-Z]+/g;
   const convertList = {
     gal: galToL,
-    l: lToGal,
+    L: lToGal,
     lbs: lbsToKg,
     kg: kgToLbs,
     mi: miToKm,
@@ -17,7 +17,7 @@
   };
   const unitsSingular = {
     gal: "gallon",
-    l: "liter",
+    L: "liter",
     lbs: "pound",
     kg: "kilogram",
     mi: "mile",
@@ -25,15 +25,15 @@
   };
   const unitsPlural = {
     gal: "gallons",
-    l: "liters",
+    L: "liters",
     lbs: "pounds",
     kg: "kilograms",
     mi: "miles",
     km: "kilometers"
   };
   const unitsLinks = {
-    gal: "l",
-    l: "gal",
+    gal: "L",
+    L: "gal",
     lbs: "kg",
     kg: "lbs",
     mi: "km",
@@ -80,6 +80,7 @@
   this.getUnit = function(input) {
     inputCheck = letters.exec(input);
     inputSequence = inputCheck === null ? null : inputCheck[0].toLowerCase();
+    inputSequence = inputSequence === "l" ? "L" : inputSequence;
     this.initUnit = convertList[inputSequence] ? inputSequence : "invalid unit";
     return this.initUnit;
   };

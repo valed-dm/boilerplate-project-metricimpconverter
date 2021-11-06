@@ -1,7 +1,7 @@
 const chai = require("chai");
 let assert = chai.assert;
 const ConvertHandler = require("../controllers/convertHandler.js");
-let input, expected, actual, convertHandler, a, b, c, d;
+let input, actual, expected, convertHandler, a, b, c, d;
 
 suite("Unit Tests", function() {
   //#1
@@ -54,11 +54,11 @@ suite("Unit Tests", function() {
   });
   //#7
   test("correctly read each valid input unit", function() {
-    input = "LBs";
-    expected = "lbs";
+    input = "l";
+    expected = "L";
     convertHandler = new ConvertHandler(input);
     actual = convertHandler.getUnit(input);
-    assert.equal(expected, actual);
+    assert.strictEqual(expected, actual);
   });
   //#8
   test("correctly return an error for an invalid input unit", function() {
