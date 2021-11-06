@@ -1,4 +1,4 @@
- const ConvertHandler = function(input) {
+const ConvertHandler = function(input) {
   const galToL = 3.78541;
   const lToGal = 0.26417;
   const lbsToKg = 0.453592;
@@ -68,11 +68,11 @@
     }
     this.initNum =
       fractionSign.length === 0 && !isNaN(inputSequence)
-        ? Math.round(parseFloat(inputSequence) * 100000) / 100000
+        ? Math.round(parseFloat(inputSequence) * 1e5) / 1e5
         : fractionSign.length === 1 && numATest && numBTest
         ? Math.round(
-            (parseFloat(twoNumbers[0]) / parseFloat(twoNumbers[1])) * 100000
-          ) / 100000
+            (parseFloat(twoNumbers[0]) / parseFloat(twoNumbers[1])) * 1e5
+          ) / 1e5
         : "invalid number";
     return this.initNum;
   };
@@ -92,28 +92,33 @@
 
   this.spellOutUnit = function(initNum, initUnit, returnNum, returnUnit) {
     spellOutInput =
-      initNum <= 1 ? unitsSingular[initUnit] : unitsPlural[initUnit];
+      initNum <= 1 ? unitsPlural[initUnit] : unitsPlural[initUnit];
     spellOutOutput =
-      returnNum <= 1 ? unitsSingular[returnUnit] : unitsPlural[returnUnit];
+      returnNum <= 1 ? unitsPlural[returnUnit] : unitsPlural[returnUnit];
     spellOutUnits = [spellOutInput, spellOutOutput];
     return spellOutUnits;
   };
 
   this.convert = function(initNum, initUnit) {
-    this.returnNum =
-      Math.round(initNum * convertList[initUnit] * 100000) / 100000;
+    this.returnNum = Math.round(initNum * convertList[initUnit] * 1e5) / 1e5;
     return this.returnNum;
   };
 
-  this.getString = function(initNum, returnNum) {
+  this.getString = function(initNum, initUnit, returnNum) {
     this.string =
-      initNum +
-      " " +
-      spellOutUnits[0] +
-      " converts to " +
-      returnNum +
-      " " +
-      spellOutUnits[1];
+      initNum == "invalid number" && initUnit == "invalid unit"
+        ? "invalid number and unit"
+        : initUnit == "invalid unit"
+        ? "invalid unit"
+        : initNum == "invalid number"
+        ? "invalid number"
+        : initNum +
+          " " +
+          spellOutUnits[0] +
+          " converts to " +
+          returnNum +
+          " " +
+          spellOutUnits[1];
     return this.string;
   };
 };

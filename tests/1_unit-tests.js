@@ -87,85 +87,85 @@ suite("Unit Tests", function() {
     c = convertHandler.convert(a, b);
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
-    actual = convertHandler.getString(a, c);
+    actual = convertHandler.getString(a, b, c);
     assert.equal(expected, actual);
   });
   //#11
   test("correctly convert gal to l", function() {
     input = "gal";
-    expected = "1 gallon converts to 3.78541 liters";
+    expected = "1 gallons converts to 3.78541 liters";
     convertHandler = new ConvertHandler(input);
     a = convertHandler.getNum(input);
     b = convertHandler.getUnit(input);
     c = convertHandler.convert(a, b);
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
-    actual = convertHandler.getString(a, c);
+    actual = convertHandler.getString(a, b, c);
     assert.equal(expected, actual);
   });
   //#12
   test("correctly convert l to gal", function() {
     input = "l";
-    expected = "1 liter converts to 0.26417 gallon";
+    expected = "1 liters converts to 0.26417 gallons";
     convertHandler = new ConvertHandler(input);
     a = convertHandler.getNum(input);
     b = convertHandler.getUnit(input);
     c = convertHandler.convert(a, b);
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
-    actual = convertHandler.getString(a, c);
+    actual = convertHandler.getString(a, b, c);
     assert.equal(expected, actual);
   });
   //#13
   test("correctly convert mi to km", function() {
     input = "mi";
-    expected = "1 mile converts to 1.60934 kilometers";
+    expected = "1 miles converts to 1.60934 kilometers";
     convertHandler = new ConvertHandler(input);
     a = convertHandler.getNum(input);
     b = convertHandler.getUnit(input);
     c = convertHandler.convert(a, b);
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
-    actual = convertHandler.getString(a, c);
+    actual = convertHandler.getString(a, b, c);
     assert.equal(expected, actual);
   });
   //#14
   test("correctly convert km to mi", function() {
     input = "km";
-    expected = "1 kilometer converts to 0.62137 mile";
+    expected = "1 kilometers converts to 0.62137 miles";
     convertHandler = new ConvertHandler(input);
     a = convertHandler.getNum(input);
     b = convertHandler.getUnit(input);
     c = convertHandler.convert(a, b);
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
-    actual = convertHandler.getString(a, c);
+    actual = convertHandler.getString(a, b, c);
     assert.equal(expected, actual);
   });
   //#15
   test("correctly convert lbs to kg", function() {
     input = "lbs";
-    expected = "1 pound converts to 0.45359 kilogram";
+    expected = "1 pounds converts to 0.45359 kilograms";
     convertHandler = new ConvertHandler(input);
     a = convertHandler.getNum(input);
     b = convertHandler.getUnit(input);
     c = convertHandler.convert(a, b);
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
-    actual = convertHandler.getString(a, c);
+    actual = convertHandler.getString(a, b, c);
     assert.equal(expected, actual);
   });
   //#16
   test("correctly convert kg to lbs", function() {
     input = "kg";
-    expected = "1 kilogram converts to 2.20462 pounds";
+    expected = "1 kilograms converts to 2.20462 pounds";
     convertHandler = new ConvertHandler(input);
     a = convertHandler.getNum(input);
     b = convertHandler.getUnit(input);
     c = convertHandler.convert(a, b);
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
-    actual = convertHandler.getString(a, c);
+    actual = convertHandler.getString(a, b, c);
     assert.equal(expected, actual);
   });
 });

@@ -29,10 +29,7 @@ suite("Functional Tests", function() {
       .end(function(err, res) {
         assert.equal(res.status, 200);
         assert.equal(res.type, "application/json");
-        assert.equal(
-          JSON.parse(res.text).string,
-          "32 undefined converts to NaN undefined"
-        );
+        assert.equal(JSON.parse(res.text), "invalid unit");
         done();
       });
   });
@@ -44,10 +41,7 @@ suite("Functional Tests", function() {
       .end(function(err, res) {
         assert.equal(res.status, 200);
         assert.equal(res.type, "application/json");
-        assert.equal(
-          JSON.parse(res.text).string,
-          "invalid number kilograms converts to NaN pounds"
-        );
+        assert.equal(JSON.parse(res.text), "invalid number");
         done();
       });
   });
@@ -59,10 +53,7 @@ suite("Functional Tests", function() {
       .end(function(err, res) {
         assert.equal(res.status, 200);
         assert.equal(res.type, "application/json");
-        assert.equal(
-          JSON.parse(res.text).string,
-          "invalid number undefined converts to NaN undefined"
-        );
+        assert.equal(JSON.parse(res.text), "invalid number and unit");
         done();
       });
   });
@@ -76,7 +67,7 @@ suite("Functional Tests", function() {
         assert.equal(res.type, "application/json");
         assert.equal(
           JSON.parse(res.text).string,
-          "1 kilogram converts to 2.20462 pounds"
+          "1 kilograms converts to 2.20462 pounds"
         );
         done();
       });
