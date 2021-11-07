@@ -1,10 +1,10 @@
 const ConvertHandler = function(input) {
   const galToL = 3.78541;
-  const lToGal = 0.26417;
+  const lToGal = 0.264172;
   const lbsToKg = 0.453592;
-  const kgToLbs = 2.20462;
+  const kgToLbs = 2.204624;
   const miToKm = 1.60934;
-  const kmToMi = 0.62137;
+  const kmToMi = 0.621373;
   const letters = /[a-zA-Z]+/g;
   const nonLetters = /[^a-zA-Z]+/g;
   const convertList = {
@@ -70,10 +70,10 @@ const ConvertHandler = function(input) {
       fractionSign.length === 0 && !isNaN(inputSequence)
         ? Math.round(parseFloat(inputSequence) * 1e5) / 1e5
         : fractionSign.length === 1 && numATest && numBTest
-        ? Math.round(
+          ? Math.round(
             (parseFloat(twoNumbers[0]) / parseFloat(twoNumbers[1])) * 1e5
           ) / 1e5
-        : "invalid number";
+          : "invalid number";
     return this.initNum;
   };
 
@@ -109,16 +109,16 @@ const ConvertHandler = function(input) {
       initNum == "invalid number" && initUnit == "invalid unit"
         ? "invalid number and unit"
         : initUnit == "invalid unit"
-        ? "invalid unit"
-        : initNum == "invalid number"
-        ? "invalid number"
-        : initNum +
-          " " +
-          spellOutUnits[0] +
-          " converts to " +
-          returnNum +
-          " " +
-          spellOutUnits[1];
+          ? "invalid unit"
+          : initNum == "invalid number"
+            ? "invalid number"
+            : initNum +
+            " " +
+            spellOutUnits[0] +
+            " converts to " +
+            returnNum +
+            " " +
+            spellOutUnits[1];
     return this.string;
   };
 };

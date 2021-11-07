@@ -10,7 +10,7 @@ suite("Unit Tests", function() {
     expected = 2;
     convertHandler = new ConvertHandler(input);
     actual = convertHandler.getNum(input);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
   //#2
   test("decimal number input", function() {
@@ -18,7 +18,7 @@ suite("Unit Tests", function() {
     expected = 0.33333;
     convertHandler = new ConvertHandler(input);
     actual = convertHandler.getNum(input);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
   //#3
   test("fractional input", function() {
@@ -26,7 +26,7 @@ suite("Unit Tests", function() {
     expected = 0.25;
     convertHandler = new ConvertHandler(input);
     actual = convertHandler.getNum(input);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
   //#4
   test("fractional input with a decimal", function() {
@@ -34,7 +34,7 @@ suite("Unit Tests", function() {
     expected = 3;
     convertHandler = new ConvertHandler(input);
     actual = convertHandler.getNum(input);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
   //#5
   test("double-fraction input", function() {
@@ -42,7 +42,7 @@ suite("Unit Tests", function() {
     expected = "invalid number";
     convertHandler = new ConvertHandler(input);
     actual = convertHandler.getNum(input);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
   //#6
   test("no numerical input", function() {
@@ -50,7 +50,7 @@ suite("Unit Tests", function() {
     expected = 1;
     convertHandler = new ConvertHandler(input);
     actual = convertHandler.getNum(input);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
   //#7
   test("correctly read each valid input unit", function() {
@@ -58,7 +58,7 @@ suite("Unit Tests", function() {
     expected = "L";
     convertHandler = new ConvertHandler(input);
     actual = convertHandler.getUnit(input);
-    assert.strictEqual(expected, actual);
+    assert.strictEqual(actual, expected);
   });
   //#8
   test("correctly return an error for an invalid input unit", function() {
@@ -66,7 +66,7 @@ suite("Unit Tests", function() {
     expected = "invalid unit";
     convertHandler = new ConvertHandler(input);
     actual = convertHandler.getUnit(input);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
   //#9
   test("return the correct return unit for each valid input unit", function() {
@@ -74,7 +74,7 @@ suite("Unit Tests", function() {
     expected = "kg";
     convertHandler = new ConvertHandler(input);
     actual = convertHandler.getReturnUnit(convertHandler.getUnit(input));
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
 
   //#10
@@ -88,7 +88,7 @@ suite("Unit Tests", function() {
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
     actual = convertHandler.getString(a, b, c);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
   //#11
   test("correctly convert gal to l", function() {
@@ -101,7 +101,7 @@ suite("Unit Tests", function() {
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
     actual = convertHandler.getString(a, b, c);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
   //#12
   test("correctly convert l to gal", function() {
@@ -114,7 +114,7 @@ suite("Unit Tests", function() {
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
     actual = convertHandler.getString(a, b, c);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
   //#13
   test("correctly convert mi to km", function() {
@@ -127,7 +127,7 @@ suite("Unit Tests", function() {
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
     actual = convertHandler.getString(a, b, c);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
   //#14
   test("correctly convert km to mi", function() {
@@ -140,7 +140,7 @@ suite("Unit Tests", function() {
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
     actual = convertHandler.getString(a, b, c);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
   //#15
   test("correctly convert lbs to kg", function() {
@@ -153,7 +153,7 @@ suite("Unit Tests", function() {
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
     actual = convertHandler.getString(a, b, c);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
   //#16
   test("correctly convert kg to lbs", function() {
@@ -166,6 +166,6 @@ suite("Unit Tests", function() {
     d = convertHandler.getReturnUnit(b);
     convertHandler.spellOutUnit(a, b, c, d);
     actual = convertHandler.getString(a, b, c);
-    assert.equal(expected, actual);
+    assert.equal(actual, expected);
   });
 });

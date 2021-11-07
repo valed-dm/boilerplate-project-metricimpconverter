@@ -16,7 +16,7 @@ suite("Functional Tests", function() {
         assert.equal(res.type, "application/json");
         assert.equal(
           JSON.parse(res.text).string,
-          "10 liters converts to 2.6417 gallons"
+          "10 liters converts to 2.64172 gallons"
         );
         done();
       });
